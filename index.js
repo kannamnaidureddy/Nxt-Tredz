@@ -1,108 +1,36 @@
-import {Link, withRouter} from 'react-router-dom'
-
-import Cookies from 'js-cookie'
+import Header from '../Header'
 
 import './index.css'
 
-const Header = props => {
-  const onClickLogout = () => {
-    const {history} = props
-
-    Cookies.remove('jwt_token')
-    history.replace('/login')
-  }
-
-  return (
-    <nav className="nav-header">
-      <div className="nav-content">
-        <div className="nav-bar-mobile-logo-container">
-          <img
-            className="website-logo"
-            src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png"
-            alt="website logo"
-          />
-
-          <button
-            type="button"
-            className="nav-mobile-btn"
-            onClick={onClickLogout}
-          >
-            <img
-              src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-log-out-img.png"
-              alt="nav logout"
-              className="nav-bar-img"
-            />
-          </button>
-        </div>
-
-        <div className="nav-bar-large-container">
-          <img
-            className="website-logo"
-            src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png"
-            alt="website logo"
-          />
-          <ul className="nav-menu">
-            <li className="nav-menu-item">
-              <Link to="/" className="nav-link">
-                Home
-              </Link>
-            </li>
-
-            <li className="nav-menu-item">
-              <Link to="/products" className="nav-link">
-                Products
-              </Link>
-            </li>
-
-            <li className="nav-menu-item">
-              <Link to="/cart" className="nav-link">
-                Cart
-              </Link>
-            </li>
-          </ul>
-          <button
-            type="button"
-            className="logout-desktop-btn"
-            onClick={onClickLogout}
-          >
-            Logout
-          </button>
-        </div>
+const Home = () => (
+  <>
+    <Header />
+    <div className="home-container">
+      <div className="home-content">
+        <h1 className="home-heading">Clothes That Get YOU Noticed</h1>
+        <img
+          src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-home-img.png"
+          alt="clothes that get you noticed"
+          className="home-mobile-img"
+        />
+        <p className="home-description">
+          Fashion is part of the daily air and it does not quite help that it
+          changes all the time. Clothes have always been a marker of the era and
+          we are in a revolution. Your fashion makes you been seen and heard
+          that way you are. So, celebrate the seasons new and exciting fashion
+          in your own way.
+        </p>
+        <button type="button" className="shop-now-button">
+          Shop Now
+        </button>
       </div>
-      <div className="nav-menu-mobile">
-        <ul className="nav-menu-list-mobile">
-          <li className="nav-menu-item-mobile">
-            <Link to="/" className="nav-link">
-              <img
-                src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-home-icon.png"
-                alt="nav home"
-                className="nav-bar-img"
-              />
-            </Link>
-          </li>
+      <img
+        src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-home-img.png"
+        alt="clothes that get you noticed"
+        className="home-desktop-img"
+      />
+    </div>
+  </>
+)
 
-          <li className="nav-menu-item-mobile">
-            <Link to="/products" className="nav-link">
-              <img
-                src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-products-icon.png"
-                alt="nav products"
-                className="nav-bar-img"
-              />
-            </Link>
-          </li>
-          <li className="nav-menu-item-mobile">
-            <Link to="/cart" className="nav-link">
-              <img
-                src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-cart-icon.png"
-                alt="nav cart"
-                className="nav-bar-img"
-              />
-            </Link>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  )
-}
-
-export default withRouter(Header)
+export default Home
