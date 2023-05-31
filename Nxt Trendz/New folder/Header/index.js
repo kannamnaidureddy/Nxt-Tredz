@@ -18,7 +18,7 @@ const Header = props => {
         <div className="nav-bar-mobile-logo-container">
           <img
             className="website-logo"
-            src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png"
+            src="https://img.freepik.com/free-photo/beautiful-shot-sea-with-mountain-distance-clear-sky_181624-2248.jpg?w=1060&t=st=1685553018~exp=1685553618~hmac=c82b8cafbeb52980727e211e97796aaf3154e964965d044459b6d5d35c4f9120"
             alt="website logo"
           />
 
